@@ -58,10 +58,11 @@ body {
     margin-right: 61px;
     width: 100%;
     max-width: 135px;
-    &__img {
-        width: 100%;
-        max-width: 135px;
-    }
+    min-height: 30px;
+    text-indent: -9999px;
+    text-decoration: none;
+    background: url("/img/mainLogo.png") center no-repeat;
+    
     @include breakpoint($tablet-bp) {
         margin-right: 50px;
     }
