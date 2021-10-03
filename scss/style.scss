@@ -1,0 +1,263 @@
+@import "reset";
+@import "mixins";
+@import "vars";
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: $main-txt;
+}
+.container {
+    padding: 0 20px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1210px;
+}
+.header {
+    width: 100%;
+    max-height: 80px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+    &-inner {
+        padding: 0 1px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-container {
+        padding: 0 20px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1210px;
+    }
+    @include breakpoint($mobile-sm) {
+        max-height: 105px;
+        &-inner {
+            padding: 17px 0 0;
+            flex-wrap: wrap;
+        }
+        &-container {
+            padding: 0;
+        }
+    }
+}
+.header-search {
+    width: 100%;
+    @include breakpoint($mobile-sm) {
+        margin-top: 16px;
+        order: 3;
+        border-top: 1px solid $additional-txt;
+    }
+}
+.header-logo {
+    margin-right: 61px;
+    width: 100%;
+    max-width: 135px;
+    &__img {
+        width: 100%;
+        max-width: 135px;
+    }
+    @include breakpoint($tablet-bp) {
+        margin-right: 50px;
+    }
+    @include breakpoint($mobile-sm) {
+        margin-left: 21px;
+        margin-right: 0;
+    }
+}
+.search {
+    padding: 7px 0 7px 39px;
+    height: 100%;
+    width: 100%;
+    max-width: 763px;
+    border: 1px solid $border-bg;
+    border-radius: 5px;
+    background-color: $main-bg;
+    position: relative;
+    &-btn {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        position: absolute;
+        top: 8px;
+        left: 10px;
+    }
+    &-input {
+        padding: 4px 0;
+        width: 100%;
+        border: none;
+        font-family: 'Roboto';
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+        color: $main-txt;
+        &::placeholder {
+            font-family: 'Roboto';
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+            color: $additional-txt;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+    @include breakpoint($mobile-sm) {
+        padding: 8px 0 8px 49px;
+        max-width: 100%;
+        border: none;
+    }
+}
+.header-profile {
+    margin-left: 60px;
+    padding: 20px 0 20px 19px;
+    border-left: 1px solid $border-bg;
+    @include breakpoint($tablet-bp) {
+        margin-left: 50px;
+    }
+    @include breakpoint($mobile-sm) {
+        margin: 0;
+        padding: 0 21px 0 0;
+        border-left: none;
+    }
+}
+.profile {
+    display: flex;
+    &-name {
+        margin-right: 10px;
+        padding: 11.5px 0;
+        font-family: 'Roboto';
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: 0.01em;
+        color: $third-txt;
+    }
+    &-avatar__img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+    }
+    &-avatar__icon {
+        display: none;
+    }
+    @include breakpoint($mobile-sm) {
+        &-name {
+            display: none;
+        }
+        &-avatar__img {
+            display: none;
+        }
+        &-avatar__icon {
+            display: block;
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+.partners {
+    margin-top: 70px;
+    &-title {
+        margin-bottom: 30px;
+        font-family: 'Roboto';
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 160%;
+        text-transform: uppercase;
+        color: $main-txt;
+        @include breakpoint($tablet-bp) {
+            font-size: 28px;
+        }
+    }
+}
+.partners-group {
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint($tablet-sm) {
+        justify-content: center;
+    }
+}
+.partners-group__item {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    padding: 27px 17px;
+    width: 25%;
+    max-width: 270px;
+    min-height: 120px;
+    max-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $border-bg;
+    border-radius: 5px;
+    &:hover {
+        box-shadow: -3px 0px 40px rgba(0, 0, 0, 0.1), 0px 0px 10px rgba(164, 164, 164, 0.03);
+    }
+    &:nth-child(4) {
+        margin-right: 0; 
+    }
+    &:nth-child(3) {
+        @include breakpoint($tablet-bp) {
+            margin-right: 0;
+        }
+        @include breakpoint($tablet-sm) {
+            margin-right: 20px;
+        }
+        @include breakpoint($mobile-bp) {
+            margin-right: 0;
+        }
+    }
+    &:nth-child(6) {
+        @include breakpoint($tablet-bp) {
+            margin-right: 0;
+        }
+    }
+    &:nth-child(even) {
+        @include breakpoint($tablet-sm) {
+            margin-right: 0;
+        }
+    }
+    &-img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    @include breakpoint($desktop-sm) {
+        margin-right: 20px;    
+        margin-bottom: 20px;
+        width: 30%;
+        max-width: 100%;
+        &:nth-child(4) {
+            margin-right: 20px;
+        }  
+    } 
+    @include breakpoint($tablet-bp) {
+        padding: 14px;
+        width: 33%;
+        max-width: 229px;
+    }
+    @include breakpoint($tablet-sm) {
+        width: 50%;
+        max-width: 300px;
+        &:nth-child(4) {
+            margin-right: 0;
+        } 
+    }
+    @include breakpoint($mobile-bp) {
+        padding: 24px;
+        width: 100%;
+        max-width: 335px;
+        height: 100%;
+        min-height: 140px;
+        &:nth-child(odd) {
+            margin-right: 0;
+        }
+    }
+}
